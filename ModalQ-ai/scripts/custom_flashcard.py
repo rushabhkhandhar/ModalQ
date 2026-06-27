@@ -138,7 +138,7 @@
 #         self.get_text(file_path, file_type)
 
 #         # Replace with your actual Cohere API key here
-#         api_key = "RxSPixDw28aNcvuOvUJivFUiepCOiByY4eBmrY2p"
+#         api_key = "YOUR_API_KEY_HERE"
         
 #         # Generate flashcards based on extracted keywords from given text content
 #         flashcard_output = self.give_custom_flashcard(api_key=api_key, grade=grade)
@@ -305,7 +305,7 @@ cohere_api_key,
 
     async def give_flashcards(self, file_path, file_type, grade):
         await self.get_text(file_path, file_type)
-        # api_key = "RxSPixDw28aNcvuOvUJivFUiepCOiByY4eBmrY2p"
+        # api_key = "YOUR_API_KEY_HERE"
         flashcard_output = await self.give_custom_flashcard(grade)
         return flashcard_output
 

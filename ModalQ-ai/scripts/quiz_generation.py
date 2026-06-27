@@ -4,7 +4,7 @@
 # from langchain.schema.runnable import RunnablePassthrough
 
 # # Set up Google API key (replace with your actual key)
-# os.environ['GOOGLE_API_KEY'] = 'AIzaSyDc1cp9pzO2OcwYTj2Y5XHpO0lVx-7oQow'
+# os.environ['GOOGLE_API_KEY'] = 'YOUR_API_KEY_HERE'
 
 # # Initialize Gemini model
 # gemini = ChatGoogleGenerativeAI(model="gemini-pro")
@@ -66,6 +66,7 @@
 # print("\nReturning the question dictionary:")
 # print(question_dictionary)
 
+# pyrefly: ignore [missing-import]
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain.prompts import PromptTemplate
 from langchain.schema.runnable import RunnablePassthrough
@@ -99,7 +100,10 @@ def generate_multiple_questions(gemini, grade, subject, topic, difficulty, count
         questions.append(question)
     return questions
 
-def generate_question_dictionary(grade, subject, topic, counts,api_key='AIzaSyDc1cp9pzO2OcwYTj2Y5XHpO0lVx-7oQow'):
+def generate_question_dictionary(grade, subject, topic, counts,api_key=None):
+    if api_key is None:
+        import os
+        api_key = os.getenv('GOOGLE_API_KEY')
     gemini = initialize_gemini(api_key)
     question_dict = {}
     

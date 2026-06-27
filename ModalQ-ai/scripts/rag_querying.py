@@ -53,7 +53,7 @@ def generate_answer(context, query_text, cohere_api_key, grade):
     qa_output = qa_chain.run(grade=grade, context=context, query=query_text)
     return qa_output
 
-def answer_query(query_text, grade, cohere_api_key,huggingface_api_key,pinecone_api_key):#cohere_api_key="RxSPixDw28aNcvuOvUJivFUiepCOiByY4eBmrY2p", huggingface_api_key="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", pinecone_api_key="2b10e565-5508-4780-9d20-b875898a9d15"):
+def answer_query(query_text, grade, cohere_api_key,huggingface_api_key,pinecone_api_key):
     os.environ['HUGGINGFACE_TOKEN'] = huggingface_api_key
 
     # Initialize Pinecone instance
@@ -115,7 +115,7 @@ def give_flashcard(subject, grade, topic, cohere_api_key):
 # subject = "Chemistry"
 # grade = "11"
 # topic = "Alcohols"
-# cohere_api_key = "RxSPixDw28aNcvuOvUJivFUiepCOiByY4eBmrY2p"
+# cohere_api_key = "YOUR_API_KEY_HERE"
 
 def give_ai_flashcard(subject,grade,topic,cohere_api_key):
     qa_output = give_flashcard(subject, grade, topic, cohere_api_key)

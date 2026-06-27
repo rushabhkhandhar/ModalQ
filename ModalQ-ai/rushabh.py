@@ -2,9 +2,11 @@ import os
 from flask import Flask, request, jsonify
 import cohere
 
+from dotenv import load_dotenv
+load_dotenv()
+
 # Set up Cohere API key (replace with your actual key)
-os.environ['COHERE_API_KEY'] = 'VBWR0jG1SJt7xLtnYzwPbSq2TuL94WlnT6tZZtOk'
-co = cohere.Client(os.environ['COHERE_API_KEY'])
+co = cohere.Client(os.getenv('COHERE_API_KEY'))
 
 app = Flask(__name__)
 

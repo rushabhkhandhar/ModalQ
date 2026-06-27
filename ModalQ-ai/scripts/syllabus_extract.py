@@ -2,7 +2,7 @@
 # import google.generativeai as genai
 
 # # Configure the Gemini API
-# genai.configure(api_key='AIzaSyDN75ihrCa2m0elIiNZZqkhfjDfK7k_7wY')
+# genai.configure(api_key='YOUR_API_KEY_HERE')
 
 # def extract_text_from_pdf(pdf_path):
 #     text = ""

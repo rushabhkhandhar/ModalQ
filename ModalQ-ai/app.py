@@ -397,7 +397,7 @@ from tensorflow import keras
 import transformers
 from transformers import DistilBertTokenizer, TFDistilBertModel
 from PIL import Image
-import pytesseract
+# import pytesseract
 from lime.lime_text import LimeTextExplainer
 import logging
 import re
@@ -436,7 +436,7 @@ class XAITextClassificationPipeline:
         self.model = keras.models.load_model(model_path, custom_objects=custom_objects, compile=False)
         self.lime_explainer = LimeTextExplainer(class_names=['class_0', 'class_1'])
         self.shap_explainer = None
-        "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"
+
     def image_to_text(self, image_path):
         try:
             img = Image.open(image_path)
